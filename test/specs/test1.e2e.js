@@ -16,7 +16,7 @@ describe('Add Employee', () => {
         await BasicDetails.addEmployeeWizard();
     })
 
-    it('Verify if user is able to fill Basic details of Employee in Add Emplyee Wizard', async() =>{
+   it('Verify if user is able to fill Basic details of Employee in Add Emplyee Wizard', async() =>{
         await BasicDetails.fillDetails()
         await browser.pause(3000)
     }
