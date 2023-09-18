@@ -1,7 +1,7 @@
 import { expect } from '@wdio/globals'
 import LoginPage from '../pageobjects/login.page.js'
 import BasicDetails from '../pageobjects/basicDetails.js'
-//import jobDetails from '../pageobjects/jobDetails.js'
+import jobDetails from '../pageobjects/jobDetails.js'
 //import SecurePage from '../pageobjects/secure.page.js'
 
 describe('Add Employee', () => {
@@ -18,9 +18,14 @@ describe('Add Employee', () => {
 
    it('Verify if user is able to fill Basic details of Employee in Add Emplyee Wizard', async() =>{
         await BasicDetails.fillDetails()
+        
+    })
+
+    it('Verify if user is able to fill job details', async()=>{
+        await jobDetails.fillJobDetails()
         await browser.pause(3000)
-    }
-)
+    })
+
 
 
 
