@@ -1,4 +1,4 @@
-import { $ } from '@wdio/globals'
+import { $,$$ } from '@wdio/globals'
 
 class JobDetailsPage {
     /**
@@ -91,7 +91,7 @@ class JobDetailsPage {
         await this.searchManager.setValue("saur");
         await this.reportingManager.waitForDisplayed({ timeout: 50000 });
         await this.reportingManager.click()
-        
+
         await this.legalEntity.click();
         await this.selectOptions.click();
         await this.buinsessUnit.click();

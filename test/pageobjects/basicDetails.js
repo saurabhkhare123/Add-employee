@@ -1,4 +1,4 @@
-import { $ } from '@wdio/globals'
+import { $,$$ } from '@wdio/globals'
 //const faker = require('faker');
 //import basicDetail from '../PrefilledData/prefilledData';
 

@@ -2,7 +2,7 @@ import { expect } from '@wdio/globals'
 import LoginPage from '../pageobjects/login.page.js'
 import BasicDetails from '../pageobjects/basicDetails.js'
 import jobDetails from '../pageobjects/jobDetails.js'
-//import SecurePage from '../pageobjects/secure.page.js'
+import workDetails from '../pageobjects/workDetails.js'
 
 describe('Add Employee', () => {
     it('Verify if user is able to login into Keka', async () => {
@@ -23,7 +23,13 @@ describe('Add Employee', () => {
 
     it('Verify if user is able to fill job details', async()=>{
         await jobDetails.fillJobDetails()
-        await browser.pause(3000)
+        
+    })
+
+    it('Verify if user is able to add employee to the system', async() => {
+        await workDetails.fillDetails();
+        await workDetails.skipStep();
+        await browser.pause(4000)
     })
 
 
