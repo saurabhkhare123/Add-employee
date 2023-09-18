@@ -27,7 +27,7 @@ describe('Add Employee', () => {
     })
 
     it('Verify if user is able to add employee to the system', async() => {
-        await workDetails.fillDetails();
+        await workDetails.clickCheckboxAndSubmit();
         await workDetails.skipStep();
         await browser.pause(4000)
     })

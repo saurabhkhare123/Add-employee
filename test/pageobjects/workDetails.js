@@ -1,5 +1,5 @@
-import { $,$$ } from '@wdio/globals'
-
+import {expect} from '@wdio/globals'
+import { expect as expectChai } from 'chai'
 class workDetails{
 
     get onboardingEnabled(){
@@ -29,7 +29,7 @@ class workDetails{
             await this.onboardingEnabled.click();
             await this.continueButton.click();
             await this.toasterMessage.waitForDisplayed({ timeout: 50000 });
-            expect(await this.successMessage.isDisplayed()).to.be.true;
+            expectChai(await this.successMessage.isDisplayed()).to.be.true;
         
             // Assertion to check when the toaster message will be removed
             await this.toasterMessage.waitForDisplayed({ reverse: true, timeout: 50000 });
