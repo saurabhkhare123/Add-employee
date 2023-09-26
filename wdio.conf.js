@@ -1,4 +1,4 @@
-export const config = {
+exports.config = {
     //
     // ====================
     // Runner Configuration
@@ -22,8 +22,8 @@ export const config = {
     // will be called from there.
     //
     specs: [
-       // './test/specs/**/*.js'
-       './test/specs/test1.e2e.js'
+     './test/specs/test.e2e.js'
+     // './test/specs/test1.e2e.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -121,10 +121,15 @@ export const config = {
     // Whether or not retried spec files should be retried immediately or deferred to the end of the queue
     // specFileRetriesDeferred: false,
     //
+    reporters: ['dot',['allure', {
+        outputDir: './',
+        disableWebdriverStepsReporting: false,
+        
+    }]],
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+  reporters: ['spec'],
 
     
     //
@@ -228,8 +233,11 @@ export const config = {
      * @param {boolean} result.passed    true if test has passed, otherwise false
      * @param {object}  result.retries   information about spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
-    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
-    // },
+    afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+    if (error) {
+        await browser.takeScreenshot();
+    }
+}
 
 
     /**

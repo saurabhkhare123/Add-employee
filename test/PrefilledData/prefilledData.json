@@ -1,0 +1,19 @@
+[
+    {
+    "firstName": "Ram",
+    "middleName": "Singh",
+    "lastName": "Singh",
+    "displayName": "Rajesh Singh",
+    "email": "hansraj@simha.in",
+    "mobileNumber": "1234567890"
+
+    },
+    {
+        "firstName": "Ramu",
+    "middleName": "Singh",
+    "lastName": "Singh",
+    "displayName": "Rajesh Singh",
+    "email": "fas6@fag.in",
+    "mobileNumber": "1234577890"
+    }
+]
